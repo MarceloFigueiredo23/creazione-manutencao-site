@@ -32,7 +32,7 @@
       position: fixed; top: 0; left: 0; right: 0; height: 5px; z-index: 200;
       background: linear-gradient(90deg, #fff, #ffd0d0);
       transform-origin: left;
-      transform: scaleX(var(--slide-progress, 0.14));
+      transform: scaleX(var(--slide-progress, 0.33));
       transition: transform 0.4s var(--ease);
     }
     .nav-dots {
@@ -80,7 +80,7 @@
         radial-gradient(ellipse 100% 100% at 50% 50%, var(--v4-red-mid) 0%, var(--v4-red-deep) 70%, #6b080c 100%);
     }
     .inner {
-      position: relative; z-index: 2; width: 100%; max-width: 960px;
+      position: relative; z-index: 2; width: 100%; max-width: 920px;
       max-height: calc(100vh - 5rem);
     }
     .eyebrow {
@@ -90,7 +90,7 @@
     h1, h2, h3 { font-family: Outfit, sans-serif; font-weight: 700; line-height: 1.12; letter-spacing: -0.02em; color: #fff; }
     h2 { font-size: clamp(1.85rem, 4.5vh, 2.65rem); margin-bottom: 0.6rem; }
     .gold-line { width: 64px; height: 4px; background: linear-gradient(90deg, #fff, #ffd0d0); border-radius: 2px; margin: 0.6rem 0 1.1rem; }
-    .lead { font-size: clamp(1.05rem, 1.85vh, 1.2rem); color: var(--muted); max-width: 720px; line-height: 1.55; }
+    .lead { font-size: clamp(1.05rem, 1.85vh, 1.2rem); color: var(--muted); max-width: 640px; line-height: 1.55; }
     .glass {
       background: rgba(255, 255, 255, 0.14);
       backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
@@ -108,7 +108,7 @@
     .capa-partnership .x { opacity: 0.5; }
     #capa h1 { font-size: clamp(2.35rem, 6.5vh, 3.5rem); margin-bottom: 0.85rem; }
     #capa h1 em { font-style: normal; color: #ffe8e8; }
-    .capa-sub { font-size: clamp(1.05rem, 2vh, 1.2rem); color: var(--muted); max-width: 600px; margin: 0 auto 1.35rem; }
+    .capa-sub { font-size: clamp(1.05rem, 2vh, 1.2rem); color: var(--muted); max-width: 560px; margin: 0 auto 1.35rem; }
     .capa-badge {
       display: inline-block; padding: 0.5rem 1.15rem; border-radius: 999px;
       border: 1px solid rgba(255,255,255,0.45); font-size: 0.85rem; font-weight: 600;
@@ -117,64 +117,30 @@
     }
     .slide-hint { margin-top: 2rem; font-size: 0.9rem; color: rgba(255,255,255,0.55); animation: pulse 2s ease infinite; }
     @keyframes pulse { 0%,100%{opacity:.35} 50%{opacity:.7} }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-top: 1rem; }
-    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 1rem; }
-    .grid-4 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.65rem; margin-top: 1rem; }
-    .card {
-      background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.22);
-      border-radius: 16px; padding: 1rem 1.15rem;
-    }
-    .card-num { font-family: Outfit; font-size: 0.85rem; font-weight: 800; color: #ffe0e0; margin-bottom: 0.35rem; }
-    .card h3 { font-size: 1.05rem; margin-bottom: 0.35rem; }
-    .card p { font-size: 0.95rem; color: var(--muted); line-height: 1.5; }
-    .list { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; margin-top: 0.85rem; }
-    .list li { font-size: 0.95rem; color: var(--muted); padding-left: 1.4rem; position: relative; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 0.25rem; }
+    .list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.85rem; }
+    .list li { font-size: 0.95rem; color: var(--muted); padding-left: 1.35rem; position: relative; }
     .list li::before { content: "✓"; position: absolute; left: 0; color: #fff; font-weight: 700; }
     .list.excluded li::before { content: "✗"; color: rgba(255,255,255,0.5); }
-    .flow-row { display: flex; align-items: stretch; gap: 0.6rem; margin-top: 1.35rem; flex-wrap: wrap; }
-    .flow-step {
-      flex: 1; min-width: 120px; text-align: center; padding: 0.9rem 0.55rem;
-      background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.22); border-radius: 14px;
-    }
-    .flow-step .icon { font-family: Outfit; font-size: 1.35rem; font-weight: 800; color: #fff; margin-bottom: 0.4rem; }
-    .flow-step strong { display: block; font-size: 0.95rem; margin-bottom: 0.25rem; }
-    .flow-step span { font-size: 0.82rem; color: var(--muted); }
-    .flow-arrow { align-self: center; color: rgba(255,255,255,0.5); font-size: 1.15rem; }
-    .case-mock {
-      border-radius: 12px; padding: 0.75rem 0.85rem; margin-bottom: 0.65rem;
-      background: rgba(0,0,0,0.28); border: 1px solid rgba(255,255,255,0.18);
-      font-size: 0.82rem; line-height: 1.4; color: rgba(255,255,255,0.9);
-    }
-    .case-mock .tag { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #ffe0e0; margin-bottom: 0.35rem; }
-    .case-mock .strike { text-decoration: line-through; opacity: 0.55; }
-    .case-mock .ok { color: #fff; font-weight: 600; }
     .plans { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1.1rem; max-width: 460px; }
-    #investimento .inner { text-align: center; max-width: 520px; margin: 0 auto; max-height: none; }
+    #investimento .inner { text-align: center; max-width: 520px; margin: 0 auto; }
     #investimento .gold-line { margin-left: auto; margin-right: auto; }
     #investimento .lead { margin-left: auto; margin-right: auto; }
     #investimento .plans { margin-left: auto; margin-right: auto; }
     #investimento .plan { text-align: center; }
     #investimento .plan ul { display: inline-block; text-align: left; }
     #investimento .cta-box { text-align: left; }
-    #investimento {
-      justify-content: flex-start;
-      padding-top: clamp(3rem, 5.5vh, 3.75rem);
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-      overscroll-behavior: contain;
-    }
     .plan {
       border-radius: 18px; padding: 1.25rem 1.3rem;
-      border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.34);
+      border: 1px solid #fff; background: rgba(0,0,0,0.48); box-shadow: 0 8px 32px rgba(0,0,0,0.35);
     }
-    .plan.featured { border-color: #fff; background: rgba(0,0,0,0.48); box-shadow: 0 8px 32px rgba(0,0,0,0.35); }
     .plan-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #ffe8e8; margin-bottom: 0.4rem; }
     .plan h3 { font-size: 1.2rem; margin-bottom: 0.2rem; }
     .plan-sub { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.7rem; }
-    .plan-price { font-family: Outfit; font-size: 2.5rem; font-weight: 800; line-height: 1; }
-    .plan-price small { font-size: 1rem; font-weight: 600; color: var(--muted); }
-    .plan-total { font-size: 0.9rem; color: var(--muted); margin-top: 0.4rem; }
-    .plan ul { list-style: none; margin-top: 0.75rem; }
+    .plan-price { font-family: Outfit; font-size: 2.75rem; font-weight: 800; line-height: 1; }
+    .plan-total { font-size: 1rem; color: #fff; margin-top: 0.55rem; font-weight: 600; }
+    .plan-pay { display: block; margin-top: 0.35rem; font-size: 0.92rem; color: var(--muted); font-weight: 500; }
+    .plan ul { list-style: none; margin-top: 0.85rem; }
     .plan ul li { font-size: 0.92rem; color: var(--muted); padding: 0.25rem 0 0.25rem 1rem; position: relative; }
     .plan ul li::before { content: "·"; position: absolute; left: 0; color: #fff; font-weight: 700; }
     .cta-box {
@@ -183,12 +149,6 @@
     }
     .cta-box h3 { font-size: 1.1rem; color: #fff; margin-bottom: 0.4rem; }
     .cta-box p { font-size: 0.95rem; color: var(--muted); }
-    .mix-row { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.85rem; }
-    .mix-chip {
-      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
-      padding: 0.4rem 0.75rem; border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.35); background: rgba(255,255,255,0.1);
-    }
     .deck-footer {
       position: fixed; bottom: 0; left: 0; right: 0; z-index: 150;
       display: flex; align-items: center; justify-content: space-between;
@@ -198,15 +158,15 @@
       border-top: 1px solid rgba(255,255,255,0.15); font-size: 0.85rem; color: rgba(255,255,255,0.75);
     }
     .progress-wrap { flex: 1; max-width: 220px; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; margin: 0 1rem; }
-    .progress-fill { height: 100%; background: #fff; border-radius: 2px; width: 14%; transition: width 0.4s var(--ease); }
+    .progress-fill { height: 100%; background: #fff; border-radius: 2px; width: 33%; transition: width 0.4s var(--ease); }
     @media (max-width: 700px) {
-      .grid-3, .grid-2, .grid-4, .plans { grid-template-columns: 1fr; }
+      .grid-2, .plans { grid-template-columns: 1fr; }
       .nav-arrow--next { right: 1rem; }
-      .flow-arrow { display: none; }
       .slide-logo { left: 1rem; top: 1rem; }
       .nav-dots { display: none; }
       .deck-footer span:first-child { display: none; }
       .deck-footer .progress-wrap { max-width: none; margin: 0 0.5rem; }
+      .plan-price { font-size: 2.25rem; }
     }
   </style>
 </head>
@@ -221,12 +181,8 @@
 
   <nav class="nav-dots" aria-label="Slides">
     <a href="#" data-slide="1" class="active" title="Capa"></a>
-    <a href="#" data-slide="2" title="Contexto"></a>
-    <a href="#" data-slide="3" title="Entrega"></a>
-    <a href="#" data-slide="4" title="Escopo"></a>
-    <a href="#" data-slide="5" title="Cases"></a>
-    <a href="#" data-slide="6" title="Operação"></a>
-    <a href="#" data-slide="7" title="Investimento"></a>
+    <a href="#" data-slide="2" title="Escopo"></a>
+    <a href="#" data-slide="3" title="Investimento"></a>
   </nav>
 
   <button type="button" class="nav-arrow nav-arrow--prev" id="prevBtn" aria-label="Anterior">
@@ -247,212 +203,69 @@
           <span>Creazione</span>
         </div>
         <h1>Manutenção do<br /><em>Portal de Vendas</em></h1>
-        <p class="capa-sub">Pacote one-time — ajustes de copy, UX e formulários do site conforme o briefing de alterações enviado pela Creazione.</p>
-        <span class="capa-badge">One-time · 8 horas · Julho 2026</span>
-        <p class="slide-hint">Setas, scroll ou swipe para avançar →</p>
+        <p class="capa-sub">8 horas no site atual para executar o briefing de alterações — textos, UX, Quero Comprar / Quero Vender e pop-up.</p>
+        <span class="capa-badge">One-time · Julho 2026</span>
+        <p class="slide-hint">Setas ou swipe →</p>
       </div>
     </section>
 
-    <!-- 2 · CONTEXTO -->
-    <section id="contexto" data-slide="2">
-      <div class="inner glass">
-        <p class="eyebrow">Contexto</p>
-        <h2>O portal já existe.<br />Falta fechar o briefing.</h2>
-        <div class="gold-line"></div>
-        <p class="lead">A Creazione enviou a lista de alterações (títulos, box explicativo, Quero Comprar / Quero Vender, pop-up e textos). Este pacote executa o que cabe em manutenção pontual — sem reinventar a plataforma.</p>
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-num">01</div>
-            <h3>Briefing claro</h3>
-            <p>Documento + prints: o que mudar, o que incluir e o que revisar no Portal de Vendas.</p>
-          </article>
-          <article class="card">
-            <div class="card-num">02</div>
-            <h3>Urgência comercial</h3>
-            <p>Comprador e vendedor precisam de jornada clara — títulos, formulários e pop-up alinhados.</p>
-          </article>
-          <article class="card">
-            <div class="card-num">03</div>
-            <h3>Escopo fechado</h3>
-            <p>8 horas one-time no site atual — sem projeto de site novo nem marketplace do zero.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3 · ENTREGA -->
-    <section id="entrega" data-slide="3">
-      <div class="inner glass">
-        <p class="eyebrow">O que a V4 faz</p>
-        <h2>8 horas no site<br />para o que pediram.</h2>
-        <div class="gold-line"></div>
-        <div class="grid-4">
-          <article class="card">
-            <div class="card-num">01</div>
-            <h3>Copy &amp; títulos</h3>
-            <p>“VOCÊ”, “Marcas e Patentes à Venda”, headline de oportunidades e status “Em análise”.</p>
-          </article>
-          <article class="card">
-            <div class="card-num">02</div>
-            <h3>Serviços + UX</h3>
-            <p>Item “Venda de Marcas e Patentes”; remover ícones Lista; box explicativo na entrada.</p>
-          </article>
-          <article class="card">
-            <div class="card-num">03</div>
-            <h3>Quero Comprar</h3>
-            <p>Seção + formulário de cadastro do comprador, T&amp;C e texto de benefícios.</p>
-          </article>
-          <article class="card">
-            <div class="card-num">04</div>
-            <h3>Quero Vender + pop-up</h3>
-            <p>Conteúdo do quadro solicitado; ajuste de frequência do pop-up; destino “Entre em contato” → Dirlene.</p>
-          </article>
-        </div>
-        <div class="mix-row">
-          <span class="mix-chip">8 horas</span>
-          <span class="mix-chip">Site atual</span>
-          <span class="mix-chip">One-time</span>
-          <span class="mix-chip">QA + publicação</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4 · ESCOPO -->
-    <section id="escopo" data-slide="4">
+    <!-- 2 · ESCOPO -->
+    <section id="escopo" data-slide="2">
       <div class="inner">
         <div class="grid-2">
           <div class="glass">
             <p class="eyebrow">Incluso · 8h</p>
-            <h2>No pacote</h2>
+            <h2>O que entra</h2>
             <div class="gold-line"></div>
             <ul class="list">
-              <li>Ajustes de textos e títulos do briefing</li>
-              <li>Inclusão do serviço “Venda de Marcas e Patentes”</li>
-              <li>Seção “Marcas e Patentes à Venda” + box explicativo</li>
-              <li>Área Quero Comprar: formulário, T&amp;C e benefícios</li>
-              <li>Área Quero Vender: conteúdo do quadro enviado</li>
-              <li>Configuração do pop-up (frequência / exibição)</li>
-              <li>Roteamento do formulário “Entre em contato” para Dirlene</li>
-              <li>QA responsivo + publicação assistida</li>
+              <li>Textos e títulos do briefing</li>
+              <li>Serviço “Venda de Marcas e Patentes”</li>
+              <li>“Marcas e Patentes à Venda” + box explicativo</li>
+              <li>Quero Comprar: formulário, T&amp;C e benefícios</li>
+              <li>Quero Vender: conteúdo do quadro enviado</li>
+              <li>Pop-up + e-mail “Entre em contato” → Dirlene</li>
+              <li>QA e publicação</li>
             </ul>
           </div>
           <div class="glass">
-            <p class="eyebrow">Fora do pacote</p>
-            <h2>Não entra</h2>
+            <p class="eyebrow">Fora</p>
+            <h2>O que não entra</h2>
             <div class="gold-line"></div>
             <ul class="list excluded">
-              <li>Redesign ou Site Basic / Advanced novo</li>
-              <li>Marketplace / painel do vendedor do zero</li>
-              <li>Fluxo de moderação “Em análise” como sistema novo</li>
-              <li>Exclusão em massa de anúncios (feature de plataforma)</li>
-              <li>Correção de replies de e-mail entre especialistas (infra)</li>
-              <li>Checkout, pagamento ou comissão automatizada</li>
-              <li>Horas além das 8 sem aditivo</li>
+              <li>Site novo ou redesign</li>
+              <li>Marketplace / painel do zero</li>
+              <li>Sistema de moderação novo</li>
+              <li>Infra de e-mail entre especialistas</li>
+              <li>Horas além das 8</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 5 · CASES -->
-    <section id="cases" data-slide="5">
-      <div class="inner glass">
-        <p class="eyebrow">Exemplos práticos</p>
-        <h2>Como fica na prática.</h2>
-        <div class="gold-line"></div>
-        <p class="lead" style="margin-bottom:0.25rem;">Referência do tipo de ajuste que a Creazione recebe neste pacote — copy, UX e formulário.</p>
-        <div class="grid-3">
-          <article class="card">
-            <div class="case-mock">
-              <div class="tag">Antes → depois</div>
-              <div class="strike">Lista de Marcas · Lista de Patentes</div>
-              <div class="ok">→ Box explicativo na entrada</div>
-            </div>
-            <h3>Entrada da área</h3>
-            <p>Visitante entende o Portal sem clicar em ícones confusos.</p>
-          </article>
-          <article class="card">
-            <div class="case-mock">
-              <div class="tag">Quero Comprar</div>
-              <div>Nome · E-mail · CPF/CNPJ · Celular</div>
-              <div class="ok">+ T&amp;C · Benefícios · Enviar</div>
-            </div>
-            <h3>Cadastro comprador</h3>
-            <p>Formulário espelhando o padrão do vendedor, com texto de benefícios.</p>
-          </article>
-          <article class="card">
-            <div class="case-mock">
-              <div class="tag">Quero Vender</div>
-              <div>1 Cadastro → 2 Ativo → 3 Termos</div>
-              <div class="ok">4 Avaliação → 5 Comissão</div>
-            </div>
-            <h3>Fluxo no ar</h3>
-            <p>Conteúdo do quadro verde no lugar das informações atuais.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6 · OPERAÇÃO -->
-    <section id="operacao" data-slide="6">
-      <div class="inner glass">
-        <p class="eyebrow">Como opera</p>
-        <h2>Kickoff rápido.<br />Entrega em dias.</h2>
-        <div class="gold-line"></div>
-        <div class="flow-row">
-          <div class="flow-step">
-            <div class="icon">01</div>
-            <strong>Aprovação</strong>
-            <span>Pacote one-time + acesso ao site</span>
-          </div>
-          <span class="flow-arrow">→</span>
-          <div class="flow-step">
-            <div class="icon">02</div>
-            <strong>Execução</strong>
-            <span>Até 8h no briefing priorizado</span>
-          </div>
-          <span class="flow-arrow">→</span>
-          <div class="flow-step">
-            <div class="icon">03</div>
-            <strong>Validação</strong>
-            <span>Creazione revisa em staging</span>
-          </div>
-          <span class="flow-arrow">→</span>
-          <div class="flow-step">
-            <div class="icon">04</div>
-            <strong>Go-live</strong>
-            <span>Publicação + checklist</span>
-          </div>
-        </div>
-        <p class="lead" style="margin-top:1.25rem;">Início em até <strong>2 dias úteis</strong> após aprovação e liberação de acesso. Itens fora das 8h entram só com aditivo explícito.</p>
-      </div>
-    </section>
-
-    <!-- 7 · INVESTIMENTO -->
-    <section id="investimento" data-slide="7">
+    <!-- 3 · INVESTIMENTO -->
+    <section id="investimento" data-slide="3">
       <div class="inner glass">
         <p class="eyebrow">Investimento</p>
-        <h2>Manutenção<br />one-time.</h2>
+        <h2>Pacote fechado.</h2>
         <div class="gold-line"></div>
-        <p class="lead" style="font-size:1rem;margin-bottom:0.25rem;">Pacote fechado para executar o briefing do Portal de Vendas — sem mensalidade.</p>
         <div class="plans">
-          <article class="plan featured">
-            <div class="plan-label">Pacote pontual · à vista</div>
-            <h3>8 horas de manutenção</h3>
-            <p class="plan-sub">Copy · UX · formulários · pop-up · QA</p>
+          <article class="plan">
+            <div class="plan-label">Manutenção one-time</div>
+            <h3>8 horas no Portal</h3>
+            <p class="plan-sub">Copy · UX · formulários · pop-up · go-live</p>
             <div class="plan-price">R$ 2.000</div>
-            <p class="plan-total">Pagamento one-time · <strong style="color:#fff">sem fidelidade</strong></p>
+            <p class="plan-total">Cartão de crédito</p>
+            <span class="plan-pay">Até 10× de R$ 200 sem juros</span>
             <ul>
-              <li>Até 8 horas no site atual (briefing Creazione)</li>
-              <li>Quero Comprar / Quero Vender + ajustes de texto e UX</li>
-              <li>Pop-up + destino de e-mail “Entre em contato”</li>
-              <li>QA e publicação assistida</li>
+              <li>Briefing Creazione priorizado em 8h</li>
+              <li>Início em até 2 dias úteis após aprovação</li>
             </ul>
           </article>
         </div>
         <div class="cta-box">
           <h3>Próximo passo</h3>
-          <p>Aprovar o pacote de <strong>R$ 2.000 · 8h</strong> e liberar acesso ao site. Priorizamos a lista do documento “Alterações Site” e publicamos após validação da Creazione.</p>
+          <p>Aprovar o pacote, liberar acesso ao site e fechar no <strong>cartão de crédito</strong>.</p>
         </div>
       </div>
     </section>
@@ -460,9 +273,9 @@
   </div>
 
   <footer class="deck-footer">
-    <span>Creazione × V4 · Manutenção Site (One-time)</span>
+    <span>Creazione × V4 · Manutenção Site</span>
     <div class="progress-wrap"><div class="progress-fill" id="progressFill"></div></div>
-    <span id="slideCounter">1 / 7</span>
+    <span id="slideCounter">1 / 3</span>
   </footer>
 
   <script>
@@ -472,7 +285,7 @@
       slide.insertBefore(logoTpl.content.cloneNode(true), slide.firstChild);
     });
 
-    const TOTAL = 7;
+    const TOTAL = 3;
     let current = 1;
     const slides = Array.from(document.querySelectorAll("#deck section[id]"));
     const navLinks = document.querySelectorAll(".nav-dots a");
